@@ -5,8 +5,9 @@ import Image from 'next/image';
 import Layout from '../components/Layout';
 import Navbar from '../components/Navbar';
 import Title from '../components/Title';
+import Textbox from '../components/Textbox';
 
-//https://randomuser.me/api/?results=100
+//
 
 const Home: NextPage = () => {
   return (
@@ -14,8 +15,19 @@ const Home: NextPage = () => {
       <Layout title={'Person Viewer'} children={undefined}></Layout>
       <Navbar></Navbar>
       <Title></Title>
+      <Textbox></Textbox>
     </>
   );
+};
+
+const getStaticProps = async () => {
+  const res = await fetch('https://randomuser.me/api/?results=10');
+  const data = await res.json();
+  const data2 = data[0];
+
+  return {
+    props: { users: data2 },
+  };
 };
 
 export default Home;
