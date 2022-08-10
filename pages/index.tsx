@@ -13,7 +13,7 @@ import PersonFrame from '../components/PersonFrame';
 
 const Home: NextPage = (data) => {
   return (
-    <div className=''>
+    <div id='bigDiv' className=''>
       <Layout title={'Person Viewer'} children={undefined}></Layout>
       <Navbar></Navbar>
       <Title></Title>
