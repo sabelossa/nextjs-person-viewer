@@ -28,7 +28,13 @@ function PersonFrame(props: any) {
 
   //return <div>{TempList}</div>;
 
-  return <div>{renderUsers(TempList)}</div>;
+  return (
+    <div className='flex justify-center '>
+      <div className='md:flex flex-row justify-center object-center items-center'>
+        {renderUsers(TempList)}
+      </div>
+    </div>
+  );
 }
 
 export default PersonFrame;

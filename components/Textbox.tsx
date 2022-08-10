@@ -1,15 +1,19 @@
 import React from 'react';
 
+function refreshPage() {
+  window.location.reload();
+}
+
 function Textbox() {
   return (
-    <div className='text-xl py-6 px-8'>
-      <div className=''>
-        <p className='shadow-2xl display: inline-block p-6 rounded-lg'>
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using Content here, content here.
-        </p>
+    <div className='text-xl py-6 px-8 flex justify-center '>
+      <div className='content-center'>
+        <button onClick={refreshPage}>
+          <p className='shadow-2xl display: inline-block p-6 rounded-lg bg-blue-50'>
+            This is a web application using the https://randomuser.me/ api.
+            Press here to refresh and see 5 new random users.
+          </p>
+        </button>
       </div>
     </div>
   );

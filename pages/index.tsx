@@ -13,18 +13,18 @@ import PersonFrame from '../components/PersonFrame';
 
 const Home: NextPage = (data) => {
   return (
-    <>
+    <div className=''>
       <Layout title={'Person Viewer'} children={undefined}></Layout>
       <Navbar></Navbar>
       <Title></Title>
       <Textbox></Textbox>
       <PersonFrame results={data}></PersonFrame>
-    </>
+    </div>
   );
 };
 
 export async function getServerSideProps(context: any) {
-  const res = await fetch('https://randomuser.me/api/?results=3');
+  const res = await fetch('https://randomuser.me/api/?results=5');
   const data = await res.json();
   //console.log(data);
   //console.log(data);
