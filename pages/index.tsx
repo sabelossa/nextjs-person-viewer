@@ -18,18 +18,19 @@ const Home: NextPage = (data) => {
       <Navbar></Navbar>
       <Title></Title>
       <Textbox></Textbox>
+      <PersonFrame results={data}></PersonFrame>
     </>
   );
 };
 
 export async function getServerSideProps(context: any) {
-  const res = await fetch('https://randomuser.me/api/?results=10');
+  const res = await fetch('https://randomuser.me/api/?results=3');
   const data = await res.json();
-
+  //console.log(data);
   //console.log(data);
   //console.log(data.results);
   return {
-    props: { data }, // will be passed to the page component as props
+    props: data,
   };
 }
 
